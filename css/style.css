@@ -334,8 +334,8 @@ nav{
     .dropdown-menu ul{
         padding: 15px 0 15px 15px
     }
-    p{
-
+    .content{
+        overflow-y: visible;
     }
 
 }
