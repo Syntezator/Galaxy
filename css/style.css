@@ -109,11 +109,11 @@ nav{
     line-height: 45px;
     color: #e0b160;
     text-transform: uppercase;
-    padding-left: 12px;
+    padding-left: 24px;
     position: relative;
     max-height: 0;
     left: 0;
-    bottom: 150px;
+    bottom: 130px;
     text-align: left;
     transition: all 0.5s ease;
     text-shadow: 0.5px 0.5px rgba(0,0,0,0.45);
