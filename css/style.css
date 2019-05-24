@@ -116,6 +116,7 @@ nav{
     bottom: 150px;
     text-align: left;
     transition: all 0.5s ease;
+    text-shadow: 0.5px 0.5px rgba(0,0,0,0.45);
 }
 .name h4{
     
@@ -127,6 +128,8 @@ nav{
 }
 .active .name{
     bottom: 0 !important;
+    text-shadow: none;
+
 }
 .dropdown-menu{
     position: absolute;
