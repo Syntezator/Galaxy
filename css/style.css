@@ -1,0 +1,347 @@
+
+@font-face {
+    font-family: "goham";
+    src: url("../fonts/GOTHAMBOOK.ttf") format("truetype");
+}
+@font-face {
+    font-family: "gohambold";
+    src: url("../fonts/Gotham Bold.otf") format("opentype");
+}
+body{
+    margin: 0;
+    font-family: "goham";
+    background: #232728;
+    overflow: hidden;
+}
+p {
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#accordion {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.accordion-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+        margin-bottom: 15px;
+}
+.accordion-title.active + .accordion-cont {
+        margin-bottom: 30px;
+        max-height: 1000px !important;
+}
+.accordion-cont {
+    transition: all 0.5s ease;
+    max-height: 0 !important;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+
+
+
+.container{
+    display: flex;
+    height: 100vh;
+}
+.col{
+    padding: 0 15px;
+    box-sizing: border-box;
+
+}
+nav{
+    position: relative;
+    top: 35%;
+    width: 100%;
+}
+.left-col{
+    width: 360px;
+    border-right: 1px solid #e0b160;
+    z-index: 5;
+    position: relative;
+}
+.left-col ul{
+    padding: 0;
+    position: relative;
+}
+.left-col li{
+    list-style: none;
+    line-height: 31px;
+    font-size: 13px;
+    position: relative;
+}
+.left-col a{
+    display: block;
+}
+.content{
+    width: 100%;
+    padding-top: 5px;
+    overflow-y: scroll;
+}
+.img-fluid{
+    max-width: 100%;
+    width: 100%;
+
+}
+.col-6{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 15px 0;
+    display: block;
+    margin-left: auto;
+    max-width: 50%;
+    position: relative;
+}
+.content p{
+        line-height: 39px;
+      font-size: 18px;
+      color: #fff;
+          margin-bottom: 30px;
+}
+.name{
+    line-height: 45px;
+    color: #e0b160;
+    text-transform: uppercase;
+    padding-left: 12px;
+    position: relative;
+    max-height: 0;
+    left: 0;
+    bottom: 150px;
+    text-align: left;
+    transition: all 0.5s ease;
+}
+.name h4{
+    
+    font-size: 36px;
+    margin: 0;
+}
+.accordion-title{
+    position: relative;
+}
+.active .name{
+    bottom: 0 !important;
+}
+.dropdown-menu{
+    position: absolute;
+    left: 100%;
+    width: 0%;
+    top: 0;
+    overflow: hidden;
+    
+    transition: all 0.5s ease;
+        white-space: nowrap;
+       
+}
+.dropdown-menu li{
+    padding-left: 15px;
+}
+.left-col .sub-menu{
+        border-right: 1px solid #e0b160;
+    position: absolute;
+    left:101%;
+    height: 100%;
+    background: #232728;
+    width: 0;
+    transition: all 0.5s ease;
+}
+.sub-menu:after{
+    content: '';
+    height: 100%;
+    width: 15px;
+    background: #232728;
+    position: absolute;
+        right: 0;
+}
+.dropdown-menu li:hover:before{
+    content: '';
+    background: #e0b160;
+    width: 10px;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+.dropdown-menu li:hover a{
+    color: #e0b160
+}
+.dropdown-menu ul{
+    padding-left: 15px;
+}
+.dropdown:hover>.dropdown-menu{
+    width: 103%
+}
+.left-col .sub-menu.open{
+    width: 295px;
+}
+.sub-menu.open:after{
+        right: -16px;
+}
+.dropdown-menu a{
+    background: #232728;
+}
+.navbar-toggler{
+        width: 50px;
+    height: 50px;
+    padding: 8px 0;
+    box-sizing: border-box;
+    align-self: center;
+    outline: none !important;
+    display: none;
+    margin-left: auto;
+}
+.circle{
+    background: #e0b160;
+    width: 5px;
+    height: 5px;
+    display: block;
+    border-radius: 50%;
+    margin: 5px auto;
+}
+.menu-open{
+    right: 0
+}
+.close{
+    width: 70px;
+    height: 2px;
+    background: #e0b160;
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    display: none;
+}
+.close:after{
+        content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #e0b160;
+    right: -3px;
+    top: -4px;
+}
+.hidden-md{
+        display: none;
+    }
+@media(max-width: 1024px){
+    .col-6{
+        width: 100%;
+        max-width: 100%;
+    }
+    .active .name {
+    max-height: 300px;
+    }
+}
+@media(max-width: 768px){
+    .container{
+        flex-wrap: wrap;
+    }
+    .left-col{
+        width: 100%;
+        height: 103px;
+        display: flex;
+        border-right:none;
+    }
+    body{
+        overflow: visible;
+    }
+    nav {
+        top: 0;
+        right: 0;
+        position: fixed;
+        background: #39393a;
+        width: 80%;
+        padding: 15px;
+        height: 100%;
+        right: -100%;
+        transition: all 0.5s ease;
+    }
+    .left-col nav>ul {
+    margin-top: 3rem;
+    }
+    .navbar-toggler,.close{
+        display: block;
+    }
+    .dropdown-menu a {
+        background: none;
+        opacity: 0.6;
+    }
+    .dropdown-menu {
+        position: inherit;
+        left: inherit;
+        width: inherit;
+        top: inherit;
+        transition: all 1s ease;
+        white-space: normal;
+        max-height: 0;
+    }
+    .dropdown:hover .dropdown-menu{
+        max-height: 500px;
+    }
+    .left-col .sub-menu {   
+        display: none;
+    }
+    .name {
+            bottom: 105px;
+             text-shadow: 0.5px 0.5px rgba(0,0,0,0.45);
+          color: #e0b160;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 31px;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          
+    }
+    .active .name{
+    padding: 0 27px;
+    }
+    .test1 .name,.test3 .name{
+        bottom: 80px;
+    }
+    .hidden-xs{
+        display: none;
+    }
+    .hidden-md{
+        display: block;
+    }
+    .content p {
+    padding: 0 30px;
+     font-size: 15px;
+      font-weight: 400;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+    }
+    .name h4{
+      font-weight: 400;
+      line-height: 31px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #e0b160;
+      font-size: 30px;
+    }
+    .dropdown-menu ul{
+        padding: 15px 0 15px 15px
+    }
+    p{
+
+    }
+
+}
+@media(max-width: 320px){
+    .name h4 {
+    font-size: 26px;
+    }
+    .test2 .name{
+        bottom: 100px;
+    }
+    .test1 .name,.test3 .name{
+        bottom: 75px;
+    }
+}
